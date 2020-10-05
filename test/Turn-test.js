@@ -1,14 +1,14 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const Turn = require('../src/Turn.js');
-const Card = require('../src/Card.js');
+const Turn = require('../src/Turn');
+const Card = require('../src/Card');
 
 describe('Turn', function() {
 
   it.skip('should be a function', function() {
     const turn = new Turn();
-    expect(turn).to.be.a('function');
+    expect(Turn).to.be.a('function');
   });
 
   it.skip('should be an instance of Turn', function() {
@@ -57,7 +57,7 @@ describe('Turn', function() {
   it.skip('should return "correct!" if guess was true', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('object', card);
-    const guess = turn.evaluteGuess();
+    const guess = turn.evaluateGuess();
     expect(guess).to.be.true;
     const feedback = turn.giveFeedback();
     expect(feedback).to.equal('correct!');
