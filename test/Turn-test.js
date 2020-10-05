@@ -28,7 +28,7 @@ describe('Turn', function() {
   })
 
   it.skip('should return the guess', function() {
-    const turn = new Turn('object', card);
+    const turn = new Turn('object');
     const userGuess = turn.returnGuess();
     expect(userGuess).to.equal('object');
   });
@@ -36,7 +36,32 @@ describe('Turn', function() {
   it.skip('should return the current flash card', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('object', card);
-    var cardInPlay = turn.returnCard();
+    const cardInPlay = turn.returnCard();
     expect(cardInPlay).to.equal(card);
+  });
+
+  it.skip('should evaluate if the guess is true or false', function() {
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const goodTurn = new Turn('object', card);
+    const badTurn = new Turn('array', card);
+    const goodGuess = goodTurn.evaluateGuess();
+    const badGuess = badTurn.evaluateGuess();
+    expect(goodGuess).to.be.true;
+    expect(badGuess).to.be.false;
+  });
+
+  it.skip('should return either correct or incorrect', function() {
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const goodTurn = new Turn('object', card);
+    const badTurn = new Turn('array', card);
+    const goodGuess = goodTurn.evaluteGuess();
+    const badGuess = badTurn.evaluateGuess();
+    expect(goodGuess).to.be.true;
+    expect(badGuess).to.be.false;
+    const goodFeedback = goodTurn.giveFeedback();
+    const badFeedback = badTurn.giveFeedback();
+    expect(goodFeedback).to.equal('correct!');
+    expect(badFeedback).to.equal('incorrect!');
+
   });
 });
