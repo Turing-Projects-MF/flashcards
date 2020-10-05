@@ -76,4 +76,4 @@ Run the command in your terminal `npm run lint` to run the linter on your JavaSc
 
 Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
 
----
+---# flashcards
