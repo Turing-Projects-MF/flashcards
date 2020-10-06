@@ -20,19 +20,19 @@ describe('Round', function() {
     round = new Round(deck);
   });
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     expect(Round).to.be.a('function');
   });
 
-  it.skip('should be an instance of Deck', function() {
+  it('should be an instance of Round', function() {
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it.skip('should start the round with a deck of cards', function() {
+  it('should start the round with a deck of cards', function() {
     expect(round.deck).to.deep.equal([card1, card2, card3]);
   });
 
-  it.skip('should return the current card being played', function() {
+  it('should return the current card being played', function() {
     const currentCard = round.returnCurrentCard();
     expect(currentCard).to.equal(card1);
   });
@@ -47,18 +47,19 @@ describe('Round', function() {
   //   //takeTurn(guess) => new Turn(guess, currentCard)
   // });
 
-  it.skip('should update the turn count each turn', function() {
+  it('should update the turn count each turn', function() {
     expect(round.turns).to.be.equal(0);
     round.takeTurn('boolean');
     expect(round.turns).to.be.equal(1);
   });
 
-  it.skip('should make the next card the current card', function() {
+  it('should make the next card the current card', function() {
+    round.takeTurn('boolean');
     const currentCard = round.returnCurrentCard();
     expect(currentCard).to.equal(card2);
   });
 
-  it.skip('should start with no incorrect guesses', function() {
+  it('should start with no incorrect guesses', function() {
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
