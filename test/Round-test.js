@@ -24,7 +24,7 @@ describe('Round', function() {
     expect(Round).to.be.a('function');
   });
 
-  it.skip('should be an instance of Deck', function() {
+  it.skip('should be an instance of Round', function() {
     expect(round).to.be.an.instanceof(Round);
   });
 
@@ -54,6 +54,7 @@ describe('Round', function() {
   });
 
   it.skip('should make the next card the current card', function() {
+    round.takeTurn('boolean');
     const currentCard = round.returnCurrentCard();
     expect(currentCard).to.equal(card2);
   });
