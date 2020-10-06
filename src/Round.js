@@ -9,9 +9,13 @@ class Round {
   }
   takeTurn(guess) {
     this.turns++;
-    // this.checkGuess(guess);
-    // this.updateCardDeck();
+    this.updateCardDeck();
+    return this.checkGuess(guess);
+  }
+  updateCardDeck() {
     this.deck.push(this.deck.shift());
+  }
+  checkGuess(guess) {
     const endOfDeck = this.deck[this.deck.length - 1];
     if (endOfDeck.correctAnswer === guess) {
       return 'correct!';
@@ -27,17 +31,6 @@ class Round {
     const percentCorrect = this.calculatePercentCorrect();
     return `**Round over!** You answered ${percentCorrect}% of the questions correctly!`;
   }
-  // updateCardDeck() {
-  //   this.deck.push(this.deck.shift());
-  // }
-  // checkGuess(guess) {
-  //   if (this.deck[0].correctAnswer === guess) {
-  //     console.log('hi');
-  //     return 'correct!';
-  //   } else {
-  //     return 'incorrect!';
-  //   }
-  // }
 }
 
 
