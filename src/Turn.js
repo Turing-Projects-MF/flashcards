@@ -3,7 +3,7 @@ class Turn {
     this.guess = guess;
     this.currentCard = currentCard;
   }
-  returnGuess() {
+  returnGuess(guess) {
     return this.guess;
   }
   returnCard() {
