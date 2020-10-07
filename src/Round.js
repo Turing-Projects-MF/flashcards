@@ -1,8 +1,8 @@
 const Turn = require('./Turn.js');
 
 class Round {
-  constructor(roundDetails) {
-    this.deck = roundDetails.cardDeck;
+  constructor(deck) {
+    this.deck = deck.cardDeck;
     this.turns = 0;
     this.incorrectGuesses = [];
   }
@@ -14,16 +14,13 @@ class Round {
     //how to write this test for Turn?
     const turn = new Turn(guess, currentCard);
     const result = turn.giveFeedback();
-
     this.turns++;
     this.checkGuess(guess);
     this.updateCardDeck();
-
     return result;
-
   }
   updateCardDeck() {
-    this.deck.push(this.deck.shift());
+    this.deck.shift();
   }
   checkGuess(guess) {
     if (guess !== this.deck[0].correctAnswer) {
@@ -35,7 +32,7 @@ class Round {
   }
   endRound() {
     const percentCorrect = this.calculatePercentCorrect();
-    return `**Round over!** You answered ${percentCorrect}% of the questions correctly!`;
+    console.log(`**Round over!** You answered ${percentCorrect}% of the questions correctly!`);
   }
 }
 
