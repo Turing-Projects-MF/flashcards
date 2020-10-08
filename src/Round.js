@@ -11,7 +11,6 @@ class Round {
   }
   takeTurn(guess) {
     const currentCard = this.returnCurrentCard();
-    //how to write this test for Turn?
     const turn = new Turn(guess, currentCard);
     const result = turn.giveFeedback();
     this.turns++;
@@ -28,7 +27,7 @@ class Round {
     }
   }
   calculatePercentCorrect() {
-    return Math.round((this.incorrectGuesses.length / this.turns) * 100);
+    return Math.round((this.turns - this.incorrectGuesses.length) / this.turns * 100);
   }
   endRound() {
     const percentCorrect = this.calculatePercentCorrect();
