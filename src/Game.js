@@ -6,27 +6,27 @@ const Card = require('./Card');
 const Round = require('./Round');
 
 class Game {
-  constructor() {}
+  constructor() {
+    this.currentRound = null;
+  }
   start() {
-    let newDeck = this.createNewDeck();
-    let newRound = this.startNewRound(newDeck);
+    const newDeck = this.createNewDeck(prototypeQuestions);
+    const newRound = this.startNewRound(newDeck);
     this.displayGame(newDeck, newRound);
-    //how to write test?
   }
   startNewRound(deck) {
     let round = new Round(deck);
     this.currentRound = round;
-
     return round;
   }
-  createNewDeck() {
-    let cardsInDeck = [];
+  createNewDeck(cardInfo) {
+    const cardsInDeck = [];
     let newCard;
-    prototypeQuestions.forEach(card => {
+    cardInfo.forEach(card => {
       newCard = new Card(card.id, card.question, card.answers, card.correctAnswer);
       cardsInDeck.push(newCard);
     })
-    let deck = new Deck(cardsInDeck);
+    const deck = new Deck(cardsInDeck);
     return deck;
   }
   displayGame(deck, round) {
