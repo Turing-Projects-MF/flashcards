@@ -23,11 +23,8 @@ class Game {
   }
 
   createNewDeck(cardInfo) {
-    const cardsInDeck = [];
-    let newCard;
-    cardInfo.forEach(card => {
-      newCard = new Card(card.id, card.question, card.answers, card.correctAnswer);
-      cardsInDeck.push(newCard);
+    const cardsInDeck = cardInfo.map(card => {
+      return new Card(card.id, card.question, card.answers, card.correctAnswer);
     })
     const deck = new Deck(cardsInDeck);
     return deck;
@@ -42,7 +39,7 @@ class Game {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
-  
+
   printQuestion(round) {
     util.main(round);
   }
