@@ -10,7 +10,7 @@ This project is designed to help study front-end engineering by simulating flash
 
 ### Setup
 
-- Clone down the flashcards repo (git@github.com:mdflynn/flashcards.git)
+- Clone down the flashcards repo ```git@github.com:mdflynn/flashcards.git```
 
 - CD into the directory that you cloned the repo into and run ```npm install```
 
