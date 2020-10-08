@@ -22,7 +22,7 @@ describe('Deck', function() {
     const deck = new Deck([card1, card2, card3]);
     expect(deck.cardDeck).to.deep.equal([card1, card2, card3]);
   });
-
+  
   it('should count how many cards are in a deck', function() {
     const card1 = new Card(1,'What primitave data type returns a true or false?', ['number', 'string', 'boolean'], 'boolean');
     const card2 = new Card(2, 'Is Javascript dynamically or statically typed?', ['dynamically', 'statically'], 'dynamically');
