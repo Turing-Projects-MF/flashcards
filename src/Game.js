@@ -9,16 +9,19 @@ class Game {
   constructor() {
     this.currentRound = null;
   }
+
   start() {
     const newDeck = this.createNewDeck(prototypeQuestions);
     const newRound = this.startNewRound(newDeck);
     this.displayGame(newDeck, newRound);
   }
+
   startNewRound(deck) {
     let round = new Round(deck);
     this.currentRound = round;
     return round;
   }
+
   createNewDeck(cardInfo) {
     const cardsInDeck = [];
     let newCard;
@@ -29,14 +32,17 @@ class Game {
     const deck = new Deck(cardsInDeck);
     return deck;
   }
+
   displayGame(deck, round) {
     this.printMessage(deck);
     this.printQuestion(round);
   }
+
   printMessage(deck) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
+  
   printQuestion(round) {
     util.main(round);
   }

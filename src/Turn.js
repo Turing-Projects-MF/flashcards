@@ -3,19 +3,22 @@ class Turn {
     this.guess = guess;
     this.currentCard = currentCard;
   }
-  returnGuess(guess) {
+
+  returnGuess() {
     return this.guess;
   }
+
   returnCard() {
     return this.currentCard;
   }
+
   evaluateGuess() {
     return this.guess === this.currentCard.correctAnswer ? true : false;
   }
+  
   giveFeedback() {
     return this.evaluateGuess() ? 'correct!' : 'incorrect!';
   }
 }
-
 
 module.exports = Turn;
