@@ -34,25 +34,25 @@ describe('Game', function() {
     const newRound = game.startNewRound(deck);
     expect(newRound).to.be.deep.equal(round)
   });
-  
+
   it('should create a new deck', function() {
     const cardInfo1 = {
-      "id": 1,
-      "question": "What primitave data type returns a true or false?",
-      "answers": ['number', 'string', 'boolean'],
-      "correctAnswer": "boolean"
+      'id': 1,
+      'question': 'What primitave data type returns a true or false?',
+      'answers': ['number', 'string', 'boolean'],
+      'correctAnswer': 'boolean'
     };
     const cardInfo2 = {
-      "id": 2,
-      "question": "Is Javascript dynamically or statically typed?",
-      "answers": ['dynamically', 'statically'],
-      "correctAnswer": "dynamically"
+      'id': 2,
+      'question': 'Is Javascript dynamically or statically typed?',
+      'answers': ['dynamically', 'statically'],
+      'correctAnswer': 'dynamically'
     };
     const cardInfo3 = {
-      "id": 3,
-      "question": "Can you use for loops in Mod 2?",
-      "answers": ["yes", "no"],
-      "correctAnswer": "no"
+      'id': 3,
+      'question': 'Can you use for loops in Mod 2?',
+      'answers': ['yes', 'no'],
+      'correctAnswer': 'no'
     };
     const card1 = new Card(1, 'What primitave data type returns a true or false?', ['number', 'string', 'boolean'], 'boolean');
     const card2 = new Card(2, 'Is Javascript dynamically or statically typed?', ['dynamically', 'statically'], 'dynamically');

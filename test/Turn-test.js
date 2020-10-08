@@ -50,12 +50,12 @@ describe('Turn', function() {
     expect(guess).to.be.false;
   });
 
-  it('should return "correct!" if guess was true', function() {
+  it('should return 'correct!' if guess was true', function() {
     const feedback = turn.giveFeedback();
     expect(feedback).to.equal('correct!');
   });
 
-  it('should return "incorrect!" if guess was false', function() {
+  it('should return 'incorrect!' if guess was false', function() {
     const badTurn = new Turn('array', card);
     const feedback = badTurn.giveFeedback();
     expect(feedback).to.equal('incorrect!');

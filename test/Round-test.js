@@ -53,12 +53,12 @@ describe('Round', function() {
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
-  it('should return "incorrect!" if failed guess', function() {
+  it('should return 'incorrect!' if failed guess', function() {
     const badGuess = round.takeTurn('number');
     expect(badGuess).to.be.equal('incorrect!');
   });
 
-  it('should return "correct!" if correct guess', function() {
+  it('should return 'correct!' if correct guess', function() {
     const goodGuess = round.takeTurn('boolean');
     expect(goodGuess).to.be.equal('correct!');
   });
@@ -72,7 +72,7 @@ describe('Round', function() {
     round.takeTurn('boolean');
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
-  
+
   it('should return the percent of correct guesses', function() {
     round.takeTurn('number');
     round.takeTurn('dynamically');
